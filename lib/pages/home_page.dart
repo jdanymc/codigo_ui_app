@@ -1,3 +1,5 @@
+import 'package:codigo_ui_app/constants.dart';
+import 'package:codigo_ui_app/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,12 +23,12 @@ class HomePage extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Color(0xff0a494e),
-                      Color(0xff05172A),
+                      kColorSecondary,
+                      kColorPrimary,
                     ],
                   ),
                 ),
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   vertical: 20.0,
                   horizontal: 16.0,
                 ),
@@ -111,7 +113,7 @@ class HomePage extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                              color: Color(0xffFFB404),
+                              color: kColorTertiary,
                               borderRadius: BorderRadius.circular(12.0)),
                           child: Icon(
                             Icons.filter_alt_outlined,
@@ -124,6 +126,56 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 14.0, vertical: 30.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Parking Near You",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w700,
+                              color: kColorPrimary),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              "View More",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w600,
+                                color: kColorTertiary,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 6.0,
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: kColorTertiary,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      child: Row(
+                        children: [
+                          ItemSliderWidget(),
+                          ItemSliderWidget(),
+                          ItemSliderWidget(),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
