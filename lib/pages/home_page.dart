@@ -1,4 +1,5 @@
 import 'package:codigo_ui_app/constants.dart';
+import 'package:codigo_ui_app/widgets/item_history_widget.dart';
 import 'package:codigo_ui_app/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -162,6 +163,9 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 14,
+                    ),
                     const SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       physics: BouncingScrollPhysics(),
@@ -173,6 +177,29 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "History Parking",
+                          style: GoogleFonts.montserrat(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w700,
+                              color: kColorPrimary),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 12.0,
+                    ),
+                    const ItemHistoryWidget(),
+                    const ItemHistoryWidget(),
+                    const ItemHistoryWidget(),
+                    const ItemHistoryWidget(),
+                    const ItemHistoryWidget(),
                   ],
                 ),
               )

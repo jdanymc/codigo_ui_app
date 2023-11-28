@@ -8,7 +8,7 @@ class ItemSliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 14.0),
+      margin: const EdgeInsets.only(right: 14.0),
       //color: Colors.red,
       width: 160.0,
       child: Column(
